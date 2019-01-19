@@ -54,6 +54,8 @@ def googlesignin():
         
             pw.send_keys(gmailpassword)
             
+            browser.find_element_by_xpath('//*[@id="passwordNext"]').click()
+            
             time.sleep(7)
             checkurl = browser.current_url
             print (checkurl)
