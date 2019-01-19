@@ -47,11 +47,10 @@ def googlesignin():
     
 
             browser.find_element_by_xpath('//*[@id="identifierNext"]').click()
-            time.sleep(2)
+            time.sleep(4)
 
-            pw = WebDriverWait(browser, 5).until(
-                EC.presence_of_element_located(('xpath','//*[@id="password"]/div[1]/div/div[1]/input')))
-        
+            pw = browser.find_element_by_xpath('//*[@id="password"]/div[1]/div/div[1]/input')
+                                             
             pw.send_keys(gmailpassword)
             
             browser.find_element_by_xpath('//*[@id="passwordNext"]').click()
